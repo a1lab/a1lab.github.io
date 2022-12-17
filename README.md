@@ -23,9 +23,6 @@ public static void main(String[] args) {
 ```
 
 ```mermaid
----
-title: Animal example
----
 classDiagram
     note "From Duck till Zebra"
     Animal <|-- Duck
