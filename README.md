@@ -22,6 +22,7 @@ public static void main(String[] args) {
 	}
 ```
 
+```mermaid
 ---
 title: Animal example
 ---
@@ -48,3 +49,4 @@ classDiagram
         +bool is_wild
         +run()
     }
+```
