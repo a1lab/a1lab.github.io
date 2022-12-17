@@ -1,6 +1,6 @@
 # a1lab.github.io
 
-```
+```java
 public static void main(String[] args) {
 		int valor;
 		Classes classes = new Classes();
