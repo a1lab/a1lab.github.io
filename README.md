@@ -1,6 +1,31 @@
 # a1lab.dev
 
 * Design Patterns
+  * Creational Patterns
+    * Factory method
+    * Abstract factory
+    * Prototype
+    * Singleton
+  * Structural Patterns
+    * Adapter
+    * Bridge
+    * Composite
+    * Decorator
+    * Facade
+    * Flyweight
+    * Proxy
+  * Behaviour Patterns
+    * Chain of Responsability
+    * Command
+    * Interpreter
+    * Iterator
+    * Mediator
+    * Memento
+    * Observer
+    * State
+    * Strategy
+    * Template method
+    * Visitor     
   * Singleton
   * Factory
   * Builder
