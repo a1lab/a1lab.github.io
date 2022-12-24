@@ -100,3 +100,17 @@ class GeraSeloAlunoNovato extends Ouvinte{
   }
 }
 ```
+
+<!-- 
+
+Casos de uso devem implementar ouvintes de eventos. Interfaces gráficas devem chamar os controladores internos; API deve chamar controladores externos; jobs devem disparar eventos. Dessa forma, toda a regra de negócio será executada pelos casos de uso, evitando que qualquer classe chame direto um repositório, ou esqueça de chamar outro serviço.
+
+-->
+
+## Camada anti-corrupção e sistemas distribuídos
+
+* Separar microsserviços tem a vantagem de manter repositórios separados, utilizar tecnologias diferentes, provisionar máquinas de forma diferente para cada necessidade; e se um módulo cair, os demais continuam funcionando
+* Message broker. Em Java, JMS. 
+* 
+
+
