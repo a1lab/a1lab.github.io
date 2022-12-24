@@ -6,6 +6,7 @@
   * Builder
   * Data Transfer Object
   * Value Object
+  * Observable 
 
 * Processo de software
   * Introdução à gestão de projetos
