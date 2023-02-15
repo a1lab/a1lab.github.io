@@ -147,4 +147,37 @@ try {
   System.out.println("Ocorreu uma exceção.");
 }
 ```
+# Lançamento de exceções
 
+```java
+ArithmeticException exception = new ArithmeticException();
+throw exception;
+```
+
+* O lançamento de exceções causa uma saída abrupta do método
+
+# Hierarquia de exceções
+
+* O que acontece se um bloco captura uma exceção do tipo A e outro do tipo B, sendo que A herda de B ?
+
+```java
+  class MinhaExcecao extends RuntimeException{
+    public MinhaExcecao(String message){
+    	super(message);
+    }
+  }
+```
+
+* Errors são pensados para os desenvolvedores da máquina virtual JVM
+* Por exemplo: se um método chama a si mesmo, cada chamada é empilhada no call stack, provocando um stackoverflow
+
+```mermaid
+classDiagram
+Throwable <|-- Error
+Throwable <|-- Exception
+Exception <|-- RuntimeException
+```
+
+* O compilador faz uma verificação sintática e exige que toda exceção do tipo **Exception** seja ou capturada dentro do próprio método no qual ela pode ser lançada, ou especificada.
+* _unchecked_ significa que não é verificado sintaticamente pelo compilador
+* 
