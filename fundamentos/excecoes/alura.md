@@ -147,6 +147,9 @@ try {
   System.out.println("Ocorreu uma exceção.");
 }
 ```
+
+* Uma alternativa ao catch múltiplo é a captura de uma exceção mais genérica (catch(Exception e))
+
 # Lançamento de exceções
 
 ```java
@@ -180,4 +183,124 @@ Exception <|-- RuntimeException
 
 * O compilador faz uma verificação sintática e exige que toda exceção do tipo **Exception** seja ou capturada dentro do próprio método no qual ela pode ser lançada, ou especificada.
 * _unchecked_ significa que não é verificado sintaticamente pelo compilador
+* para fins de execução, nao faz diferença. Se uma exceção unchecked for lançada, ela deve ser tratada
+* a diferença é em tempo de compilação. exceções checked devem ser tratadas ou especificadas, senao nao compila
+
+* O que acontece se o main jogar uma exceção ?
 * 
+ 
+# Passando de uma RuntimeException (unchecked) para uma Exception (checked)
+
+* O que acontece quando usamos uma exceção checked ao invés de uma unchekd?
+* Demonstrar como o compilador exige que o código seja corrigido
+
+# Exceções e herança
+
+* que acontece se um metodo de uma classe que lança uma exceção é sobrescrito por outra classe?
+* se o método da superclasse lança uma exceção, o método da classe filha que o sobrescreve deve obrigatoriamente lançar a mesma exceção ?
+* ele pode lançar um subtipo dessa exceção?
+* se o método da classe mãe não lança exceções, ao sobrescrevê-lo, podemos lançar uma exceção
+* se ele lança uma unica exceção, podemos lançar outra também?
+
+# finally
+
+* No exemplo abaixo, a conexão não é fechada, pois uma exceção é lançada pelo método **leDados()**. Dessa forma o fluxo é interrompido abruptamente antes de alcançar o método **fecha()**. 
+
+```java
+public static void main(String[] args) {
+    try {
+        Conexao con = new Conexao();
+        con.leDados();
+        con.fecha();
+    } catch(IllegalStateException ex) {
+        System.out.println("Deu erro na conexao");
+    }
+}
+```
+
+* No exemplo abaixo, se houver uma exceção durante a instanciação da classe Conexao, ela não será capturada pelo _try-catch_
+* Como se trata de uma exceção do tipo _checked_, é obrigatório capturá-la ou especificá-la, senão o códgio não vai compilar
+
+```java
+class Conexao{
+  public Conexao() throws Exception{//checked exception
+  
+  }
+}
+
+
+public static void main(String[] args) {
+    Conexao con = new Conexao();
+    try {
+        con.leDados();
+    } catch(IllegalStateException ex) {
+        System.out.println("Deu erro na conexao");
+    }
+    con.fecha()
+}
+```
+
+* Ao passar a inicilização da variável para dentro do bloco try, e manter a instrução **con.fecha()** fora da estrutura _try-catch_, se houver uma exceção, a variável con permanecerá nula, de modo que a chamada ao método **con.fecha()** vai causar um NullPointerException.
+
+```java
+public static void main(String[] args) {
+    Conexao con = null;
+    try {
+        con = new Conexao();
+        con.leDados();
+        con.fecha();
+    } catch(IllegalStateException ex) {
+        System.out.println("Deu erro na conexao");
+        con.fecha();
+    }
+}
+
+```java
+public static void main(String[] args) {
+    Conexao con = null;
+    try {
+        con = new Conexao();
+        con.leDados();
+    } catch(IllegalStateException ex) {
+        System.out.println("Deu erro na conexao");
+    } finally {
+        con.fecha();
+    }
+}
+```
+```
+
+* o bloco finally é opcional, executado com ou sem exceção, tipicamente usado para fechar recursos
+* pode-se usar um bloco try, mesmo que não tenha nenhum bloco catch
+
+# try-with-resources
+
+```java
+public class Conexao implements AutoCloseable{
+    public Conexao() {
+        System.out.println("Abrindo conexao");
+        throw new IllegalStateException();
+    }
+
+    public void leDados() {
+        System.out.println("Recebendo dados");
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public void close() {
+        System.out.println("Fechando conexao");
+    }
+}
+```
+
+```java
+public static void main(String[] args) {
+
+    try (Conexao conexao = new Conexao()) {
+        conexao.leDados();
+    } catch(IllegalStateException ex) {
+        System.out.println("Deu erro na conexao");
+    }
+}
+```
