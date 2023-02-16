@@ -32,3 +32,4 @@
   javac outroDiretorio/MinhaClasse.java
   java outroDiretorio.MinhaClasse
 ```
+ 
