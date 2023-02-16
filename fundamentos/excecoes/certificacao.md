@@ -54,3 +54,9 @@ public static void main(String[] args) {
 
 * Se a exceção lançada no bloco try encontra um tratamento em um dos blocos _catch_, ele é tratada por esse bloco. Do contrário o fluxo simplesmente vaza e continua
 
+# métodos que chamam outros métodos e a pilha de chamadas
+
+* se o códgio tiver uma exceção checked, ele precisa necessariamente captura-la ou trta-la em tempo de compilacao, senao nao compila
+* o método main nao pode jogar uma exceção
+* se a exceção for lançada e o método main não tratá-la, ela vaza e o programa termina
+* 
