@@ -78,4 +78,26 @@ System.out.println(guilherme.getNome()); // silveira
 System.out.println(clientes[0].getNome()); // silveira
 ```
 
+<!--verificar a questão dos ponteiros com listas, arrays, clone, copias de variaveis, etc.-->
 
+# casting de arrays
+
+* não existe casting de tipos primitivos, apenas de tipos de referencia, por conta do polimorfismo
+* o exemplo abaixo nao compila
+
+```java
+int[] valores = new int[10];
+long[] vals = valores; // Não compila
+```
+
+```
+String[] valores = new String[2];
+valores[0] = "Certificação";
+valores[1] = "Java";
+
+Object[] vals = valores;
+
+for(Object valor : vals) {
+    System.out.println(valor); // Certificação e depois Java
+}
+```
