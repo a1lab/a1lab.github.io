@@ -59,4 +59,102 @@ public static void main(String[] args) {
 * se o códgio tiver uma exceção checked, ele precisa necessariamente captura-la ou trta-la em tempo de compilacao, senao nao compila
 * o método main nao pode jogar uma exceção
 * se a exceção for lançada e o método main não tratá-la, ela vaza e o programa termina
-* 
+
+* se houver código não alcançável abaixo de uma instrução **throw**, o códgio nça compila
+
+# exceções tradicionais
+
+```java
+  int[] x = new int[2];
+  x[2] = 1;
+```
+
+> ArrayIndexOutOfBoundsException
+
+```java
+  List<Integer> listaNumeros = new ArrayList<>();
+  listaNumeros.get(0);
+```
+
+> IndexOutOfBoundsException
+
+* Um **NullPointerException** ocorre ao tentar acessar um dos membros de um objeto não inicializado.
+* Perceba que isso é diferente de não inicializar uma variável local. Nesse caso, o código sequer compila.
+
+```java
+  String nome = null;
+  nome.length();
+```
+
+> NullPointerException
+
+```java
+  String nome = "João";
+  Integer valor = (Integer) nome;
+```
+
+> ClassCastException
+
+```java
+  String numero = "numero";
+  int valorDoNumero = Integer.parseInt(numero);
+```
+
+> NumberFormatException
+
+```java
+  public void depositar(double valor){
+    if(valor < 0){
+      throw new IllgalArgumetnException();
+    }
+    //demais instruções omitidas
+  }
+```
+
+> IllegalArgumentException
+
+```java
+  private boolean contaInativa = true;
+  private double saldo = 100.00;
+  public void sacar(double valor){
+    if(contaInativa){
+      throw new IllegalStateException();
+    }
+  }
+```  
+
+> IllegalStateException
+
+```
+  class Pessoa{
+    static {
+      String nome = null;
+      nome.length();
+    }
+  }
+```
+
+> NullPointerException
+> 
+> ExceptionInictializerError
+
+```java
+  public void metodo(){
+    metodo();
+  }
+```
+
+> StackOverflowError
+
+* Se uma das bibliotecas não está no _classpath_
+
+> NoClassDefFoundError
+
+```java
+  List<Integer> lista = new ArrayList<>();
+  while(true){
+    lista.add(1);
+  }
+```
+
+> OutOfMemoryError
