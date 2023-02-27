@@ -34,3 +34,16 @@
 
 # equals
 
+```java
+public static void main(String[] args) {
+		Collection<String> colecao1 = new ArrayList<>();
+		Collection<String> colecao2 = new ArrayList<>();
+		
+		colecao1.add("felipe");
+		colecao2.add("felipe");
+		
+		System.out.println(colecao1.equals(colecao2));
+	}
+```
+
+* é importante salientar que, como um arraylist trabalha com um array internamente, ao adicionar um objeto nessa coleção, apenas estamos referenciando-o, de modo que ao alterar o objeto original, ao acessá-lo pelo arrayList, essa referência também será alterada
