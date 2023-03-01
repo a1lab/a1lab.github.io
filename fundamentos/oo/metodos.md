@@ -17,12 +17,13 @@ E, ainda na assinatura, podemos ter:
 * strictfp - não cai nesta prova. Ativa o modo de portabilidade matemática para contas de ponto flutuante.
 * throws <EXCEPTIONS> - após a lista de parâmetros, podemos indicar quantas exceptions quisermos para o throws.
   
- A ordem dos elementos na assinatura dos métodos é sempre a seguinte, sendo que os modificadores podem aparecer em qualquer ordem: <MODIFICADORES> <TIPO_RETORNO> <NOME> (<PARÂMETROS>) <THROWS_EXCEPTIONS>
+ A ordem dos elementos na assinatura dos métodos é sempre a seguinte, sendo que os modificadores podem aparecer em qualquer ordem: \<MODIFICADORES\> \<TIPO_RETORNO\> \<NOME\> (<PARÂMETROS>) \<THROWS_EXCEPTIONS\>
   
 # parametros
 
 * não é possível ter valores padrão para parametros
 * se um parametro for definido na assinatura de um método, é impossível invocá-lo sem fornecer seu valor
 * se um parâmetro for considerado final, não é possível modificá-lo (boa prática)
+* 
   
   
