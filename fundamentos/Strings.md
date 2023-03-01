@@ -31,6 +31,24 @@ sb3.append("abcdef");
 * toString converte para um string
 * o método substring não altera o valor do stringbuilder/buffer, mas retorna um novo objeto do tipo string, com o conteúdo do intervalo informado
 
+# string são imutáveis
+
+```java
+    String s = "caelum";
+    s.toUpperCase();
+    System.out.println(s);
+```
+
+> caelum
+
+* isso acontece pq o método não altera a string original, mas retorna um novo objeto
+* dessa forma, a nova string deve ser associada a uma outra variável, ou mesmo sobrescrever a referencia da propria variavel
+
+# charAt
+
+* o método charAt devolve um char contido na string, com o índice informado
+* se o índice for negativo ou maior do que o tamanho da string, java lança um StringIndexOutOfBoundsException
+
 # criando e manipulando strings
 
 * há duas maneiras de criar objetos do tipo string
@@ -95,4 +113,50 @@ class A {
 # indexOf e lastIndexOf
 
 * indexOf retorna o índice. Se nao for encontrado, retorna -1
+
+```
+String texto = "Pretendo fazer a prova de certificação de Java";
+System.out.println(texto.indexOf("tendo")); // imprime 3
+```
+* no exemplo acima, se houver _match_, o método retorno a posição do primeiro caractere
+
+# contains, startsWith e endsWith
+
+```java
+System.out.println(texto.startsWith("Pretendo")); // true
+System.out.println(texto.startsWith("Pretendia")); // false
+
+System.out.println(texto.endsWith("Java")); // true
+System.out.println(texto.endsWith("Oracle")); // false
+
+System.out.println(texto.contains("Pretendo")); // true
+System.out.println(texto.contains("Pretendia")); // false
+
+```
+
+* os métodos contains, startswith e endswith são booleanos, ou seja, não retornam posições
+* nenhum desses métodos trabalha com expressoes regulares
+
+# equals e compareTo
+
+* enquanto os métodos startswith, endswith e contains verificam se uma string está contida em outra, ou seja uma string começa/termina com outra, os métodos equals e compareTo verifica se o _match_ é exato
+* equals é booleano, compareTo retorna um valor numérico
+* compareTo retorna zero se houver match e outras valores, caso contrário
+* ambos os métodos aceitam a variação ignoreCase
+
+# outros métodos de string
+
+* length() retorna a quantidade de caracteres (inclusive espaços em branco)
+* isEmpty() retorna verdadeiro se a string tiver zero caracteres (considera caracteres em branco)
+* toUpperCase() e toLowerCase() tornam a string toda maiúscula ou minúscula, respectivamente
+* substring(inicio, fim) retorna um novo objeto string contendo os caracteres no intervalo \[inicio,fim\[ da primeira string
+* concat() concatena strings
+* replace( oldChar, newChar) substitui todas as ocorrencias do antigo caractere pelo novo
+* replace (target, replacement) substitui todas as ocorrencias de uma sequencia de caracteres por outra
+* trim() remove os espaços em branco das duas pontas 
+
+# substring
+
+* o método substring tem duas sobrecargas: uma que aceita dois índices (começo e fim); e outra que aceita apenas o início da substring, percorrendo-a até o final
+* se o início for maior do que o tamanho; se o inicio for maior do que o fim; se o fim for maior do que o tamanho; se o início for menor do que zero; ou se o início for maior do que o fim, o método lançará uma exceção
 * 
