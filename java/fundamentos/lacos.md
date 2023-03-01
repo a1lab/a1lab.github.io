@@ -48,3 +48,13 @@ while(a > b){ //compila, mas nunca executa
 ```
 
 > compila, mas não executa apropriadamente
+
+# tipos de lacos
+
+* o for é preferível qunado sabemos a quantidade de iterações
+* o enhanced-for é preferível qunado for uma iteração de leitura
+  * nao é possível percorrer mais de uma coleção ao mesmo tempo
+  * nao é possível remover ou alterar a coleção original
+  * nao é possível inicializar um array com esse tipo de laço
+
+
