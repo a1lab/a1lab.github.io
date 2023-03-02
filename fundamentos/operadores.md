@@ -8,6 +8,11 @@
 
 * na atribuição de valores, a passagem de parametros é por referencia e não por copia
 
+# operadores de incremento e decremento
+* se aplicam somente a variáveis
+* nao se aplicam a literais, nem a métodos
+* diferença entre pré e pós: 
+
 # operadores aritméticos
 
 * a manipulação dos valores contidos nas variáveis pode ser feita por meio de operadores aritméticos
