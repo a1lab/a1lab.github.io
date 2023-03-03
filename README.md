@@ -1,71 +1,41 @@
 # a1lab.dev
 
-* Design Patterns
-  * Creational Patterns
-    * Factory method
-    * Abstract factory
-    * Prototype
-    * Singleton
-  * Structural Patterns
-    * Adapter
-    * Bridge
-    * Composite
-    * Decorator
-    * Facade
-    * Flyweight
-    * Proxy
-  * Behaviour Patterns
-    * Chain of Responsability
-    * Command
-    * Interpreter
-    * Iterator
-    * Mediator
-    * Memento
-    * Observer
-    * State
-    * Strategy
-    * Template method
-    * Visitor     
-  * Singleton
-  * Factory
-  * Builder
-  * Data Transfer Object
-  * Value Object
-  * Observable 
-
-* Processo de software
-  * Introdução à gestão de projetos
-  * Rational Unified Process
-  * Domain Driven Design
-  * Test Driven Development
-  * Behaviour Driver Development
-
+* Java
+  * Introdução à linguagem Java
+  * Fundamentos de programação I
+  * Fundamentos de programação II
+  * Orientação a objetos I
+  * Orientação a objetos II
+  * Tratamento de exceções
+  * Java _Generics_
+  * Java _Reflection_
+  * Coleções
+  * API Java
+    * Strings
+    * Wrappers
+  * Expressões Lambda
+  * Gerenciamento de dependências com Maven
+  * Automatização de build com Maven
+  * Threads I
+  * Threads II
+* Arqutietura de software
+  * Design patterns
+  * SOLID
+  * Clean architecture
+  * Clean code
 * Persistência de dados
-  * Modelagem de dados
-  * Normalização
   * JDBC
-  * Hibernate ORM
-  * Hibernate Envers
-  * Hibernate Criteria Query
-
-* Spring Boot 3
-  * Spring Data
-  * RESTful controllers
-  * Rest Template
- 
-* Testes e qualidade de código
-  * JUnit
+  * JPA
+  * Hibernate envers
+* Framework Spring
+  * Controladores REST
+  * Spring data
+  * Spring test
+* Testes
+  * Testes unitários com JUnit
   * Hamcrest
-  * Mockito
+  * EasyMock
+  * RestAssured
   * Selenium
   * Cucumber
-  * Spring Data Test
-  * Spring Test
-  * SonarQube
-
-* Maven
-  * Gestão de dependências
-  * Build e profiles
-  
-
-
+  * Arquillian
