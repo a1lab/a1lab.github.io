@@ -60,4 +60,6 @@ v.desliga();
 Já a chamada ao método desliga não compilará, porque ele não está definido na classe Veiculo. Como a referência é desse tipo, o método (que existe no objeto) não é visível.
 
 
+# super
 
+* em um método sobrescrito, é possível invocar o método da classe mãe, por meio do operador super
