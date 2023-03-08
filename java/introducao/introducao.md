@@ -19,3 +19,20 @@
  * @author a1lab
  *
  */
+
+
+
+/*
+ * uma classe pode ser pública ou default (de pacote)
+ * qual a vantagem de usar uma ou outra?
+ * default é acessada somente dentro do mesmo pacote
+ * 
+ * 
+ * A classe com código-fonte é gravada com extensão .java
+ * Depois de compilada pelo compilador Javac, ela é transformada em um arquivo bytecode
+ * O bytecode é interpretado pela jvm
+ * 
+ * Para compilar: javac Programa.java
+ * Para executar: java Programa
+ */
+ 
